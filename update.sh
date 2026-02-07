@@ -26,14 +26,13 @@ EOF
     echo "═══ MENÚ PRINCIPAL ═══"
     echo ""
     echo "1) Actualizar"
-    echo "2) Salir"
+    echo "0) Salir"
     echo ""
     echo -n "Selecciona una opción: "
     read opcion
     
     case $opcion in
         1)
-            clear
             echo ""
             echo "Actualizando sistema..."
             echo ""
@@ -42,10 +41,9 @@ EOF
             echo ""
             echo "✓ Sistema actualizado correctamente"
             echo ""
-            echo "Presiona Enter para continuar..."
             read
             ;;
-        2)
+        0)
             clear
             echo ""
             echo "¡Hasta luego!"
