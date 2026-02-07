@@ -33,6 +33,7 @@ EOF
     
     case $opcion in
         1)
+            clear
             echo ""
             echo "Actualizando sistema..."
             echo ""
@@ -41,7 +42,7 @@ EOF
             echo ""
             echo "✓ Sistema actualizado correctamente"
             echo ""
-            read
+            sleep 2
             ;;
         0)
             clear
