@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Colores
+CYAN='\033[0;36m'
+
+
 mostrar_banner() {
     clear
     echo -e "${CYAN}"
