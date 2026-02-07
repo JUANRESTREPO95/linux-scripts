@@ -23,7 +23,7 @@ mostrar_banner() {
 ║    ███████║╚██████╗██║  ██║██║██║        ██║       ║
 ║    ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝       ║
 ║                                                    ║
-║           Sistema de Gestión Automatizada         ║
+║           Sistema de Gestión Automatizada          ║
 ║                   by JUANRESTREPO95                ║
 ╚════════════════════════════════════════════════════╝
 EOF
@@ -34,7 +34,7 @@ EOF
 pausar() {
     echo ""
     echo -e "${YELLOW}Presiona Enter para continuar...${NC}"
-    read
+    read -r
 }
 
 # Función de actualización del sistema
@@ -65,10 +65,11 @@ menu_aplicaciones() {
         echo "0) Volver"
         echo ""
         echo -n -e "${CYAN}Selecciona una opción: ${NC}"
-        read opcion
+        read -r opcion
         
         case $opcion in
             1)
+                mostrar_banner
                 echo -e "${BLUE}Instalando Tailscale...${NC}"
                 curl -fsSL https://tailscale.com/install.sh | sh
                 echo ""
@@ -76,6 +77,7 @@ menu_aplicaciones() {
                 pausar
                 ;;
             2)
+                mostrar_banner
                 echo -e "${BLUE}Instalando Samba...${NC}"
                 sudo apt install samba -y
                 echo ""
@@ -83,11 +85,11 @@ menu_aplicaciones() {
                 pausar
                 ;;
             0)
-                break
+                return
                 ;;
             *)
                 echo -e "${RED}Opción inválida${NC}"
-                sleep 2
+                sleep 1
                 ;;
         esac
     done
@@ -103,7 +105,7 @@ menu_principal() {
         echo "0) Salir"
         echo ""
         echo -n -e "${CYAN}Selecciona una opción: ${NC}"
-        read opcion
+        read -r opcion
         
         case $opcion in
             1)
@@ -113,12 +115,13 @@ menu_principal() {
                 menu_aplicaciones
                 ;;
             0)
-                echo -e "${GREEN}¡Hasta luego!${NC}"
+                mostrar_banner
+                echo -e "${GREEN}¡Hasta luego!${NC}\n"
                 exit 0
                 ;;
             *)
                 echo -e "${RED}Opción inválida${NC}"
-                sleep 2
+                sleep 1
                 ;;
         esac
     done
