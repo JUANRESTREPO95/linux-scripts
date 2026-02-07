@@ -26,7 +26,7 @@ EOF
     echo "═══ MENÚ PRINCIPAL ═══"
     echo ""
     echo "1) Actualizar"
-    echo "0) Salir"
+    echo "2) Salir"
     echo ""
     echo -n "Selecciona una opción: "
     read opcion
@@ -42,9 +42,10 @@ EOF
             echo ""
             echo "✓ Sistema actualizado correctamente"
             echo ""
-            sleep 2
+            echo "Presiona Enter para continuar..."
+            read
             ;;
-        0)
+        2)
             clear
             echo ""
             echo "¡Hasta luego!"
