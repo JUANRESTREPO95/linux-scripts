@@ -4,6 +4,7 @@
 CYAN='\033[0;36m'
 NC='\033[0m'
 
+clear
 while true; do
     echo -e "${CYAN}"
     cat << 'EOF'
