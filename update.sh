@@ -17,7 +17,7 @@ mostrar_banner() {
 ║    ███████║╚██████╗██║  ██║██║██║        ██║       ║
 ║    ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝       ║
 ║                                                    ║
-║           Sistema de Gestión Automatizada         ║
+║           Sistema de Gestión Automatizada          ║
 ║                   by JUANRESTREPO95                ║
 ╚════════════════════════════════════════════════════╝
 EOF
