@@ -1,5 +1,9 @@
 #!/bin/bash
 
+mostrar_banner() {
+    clear
+    echo -e "${CYAN}"
+    cat << "EOF"
 ╔════════════════════════════════════════════════════╗
 ║                                                    ║
 ║    ███████╗ ██████╗██████╗ ██╗██████╗ ████████╗    ║
@@ -9,8 +13,13 @@
 ║    ███████║╚██████╗██║  ██║██║██║        ██║       ║
 ║    ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝       ║
 ║                                                    ║
-║           Sistema de Gestión Automatizada          ║
+║           Sistema de Gestión Automatizada         ║
 ║                   by JUANRESTREPO95                ║
 ╚════════════════════════════════════════════════════╝
+EOF
+    echo -e "${NC}\n"
+}
+
+
 sudo apt update
 sudo apt upgrade -y
