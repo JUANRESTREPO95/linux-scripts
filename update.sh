@@ -23,8 +23,6 @@ submenu_aplicaciones() {
         --checklist "Usa ESPACIO para marcar/desmarcar, ENTER para instalar:" 15 60 5 \
         "tailscale" "Cliente VPN Tailscale" OFF \
         "samba" "Servidor de archivos Samba" OFF \
-        "docker" "Plataforma de contenedores" OFF \
-        "git" "Sistema de control de versiones" OFF \
         3>&1 1>&2 2>&3)
     
     # Si el usuario canceló, volver al menú
@@ -52,30 +50,16 @@ submenu_aplicaciones() {
         case $app in
             tailscale)
                 echo "→ Instalando Tailscale..."
-                # Aquí va tu código de instalación de Tailscale
+                curl -fsSL https://tailscale.com/install.sh | sh
                 sleep 1
                 echo "✓ Tailscale instalado"
                 echo ""
                 ;;
             samba)
                 echo "→ Instalando Samba..."
-                # Aquí va tu código de instalación de Samba
+                sudo apt install samba samba-common-bin
                 sleep 1
                 echo "✓ Samba instalado"
-                echo ""
-                ;;
-            docker)
-                echo "→ Instalando Docker..."
-                # Aquí va tu código de instalación de Docker
-                sleep 1
-                echo "✓ Docker instalado"
-                echo ""
-                ;;
-            git)
-                echo "→ Instalando Git..."
-                # Aquí va tu código de instalación de Git
-                sleep 1
-                echo "✓ Git instalado"
                 echo ""
                 ;;
         esac
